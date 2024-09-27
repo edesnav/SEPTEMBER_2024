@@ -1,0 +1,5 @@
+USE CM_012
+
+SELECT * 
+FROM v_GS_UPGRADE_EXPERIENCE_INDICATORS
+where UpgExProp0 like 'red'
