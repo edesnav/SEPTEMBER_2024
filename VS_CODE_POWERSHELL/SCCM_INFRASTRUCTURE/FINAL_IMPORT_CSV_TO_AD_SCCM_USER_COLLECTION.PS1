@@ -115,7 +115,11 @@ $buttonIniciar.Add_Click({
 
     # Definir rutas de archivos
     $archivoEntrada = $textBoxArchivo.Text
-    $archivoSalida = "C:\SCCM_DATOS_COLECCIONES\usuario.txt"
+    $folderPath = "C:\SCCM_DATOS_COLECCIONES"
+    if (-not (Test-Path $folderPath)) {
+        New-Item -Path $folderPath -ItemType Directory
+    }
+    $archivoSalida = "$folderPath\usuario.txt"
     $archivoLog = "C:\SCCM_DATOS_COLECCIONES\log.csv"
     $CollectionName = $textBoxColeccion.Text
 
